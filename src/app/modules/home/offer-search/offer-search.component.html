@@ -1,0 +1,52 @@
+<div class="offer-search-content" (keyup.enter)="clickSearchOffers(id.value, priceMin.value, priceMax.value, spaceMin.value, spaceMax.value)">
+    <div class="offer-search-property-types-container">
+        <!--  -->
+        <div class="offer-search-property-type" *ngFor="let propertyType of propertyTypes" (click)="clickPropertyType(propertyType)" [class.selected]="propertyType === selectedType" [class.is-checked]="isAnyPropertySubtypeSelected(propertyType)">{{propertyType.key.getValue()}}</div>
+    </div>
+    <div class="offer-search-property-subtypes-container" *ngIf="selectedType">
+        <div class="offer-search-property-subtype" *ngFor="let propertySubtype of selectedType.subtypes" (click)="clickPropertySubtype(propertySubtype)" [class.selected]="propertySubtype.value">
+            <input class="offer-search-subtype-checkbox" type="checkbox" [checked]="propertySubtype.value"> {{propertySubtype.key.getValue()}}
+        </div>
+    </div>
+    <div class="offer-search-numeric-input" (keypress)='handleNumericInput($event)'>
+        <div class="offer-search-from-texts-container ">
+            <div class="offer-search-price-from-text from-text">{{ 'PRICE' | translate}} {{ 'FROM' | translate | lowercase}}
+            </div>
+            <div class="offer-search-space-from-text from-text">{{ 'SPACE' | translate}} {{ 'FROM' | translate | lowercase}}
+            </div>
+        </div>
+        <div class="offer-search-from-inputs-container">
+            <input #priceMin value={{priceFrom}} class="offer-search-price-from-input from-input">
+            <input #spaceMin value={{spaceFrom}} class="offer-search-space-from-input from-input">
+        </div>
+        <div class="offer-search-from-units-container">
+            <div class="offer-search-price-unit unit-text">EUR</div>
+            <div class="offer-search-space-unit unit-text">{{ 'SQUARE_METERS' | translate}}</div>
+        </div>
+
+        <div class="offer-search-to-units-container">
+            <div class="offer-search-price-unit unit-text">EUR</div>
+            <div class="offer-search-space-unit unit-text">{{ 'SQUARE_METERS' | translate}}</div>
+        </div>
+        <div class="offer-search-to-inputs-container">
+            <input #priceMax value={{priceTo}} class="offer-search-price-to to-input">
+            <input #spaceMax value={{spaceTo}} class="offer-search-space-to to-input">
+            <input #id value={{searchId}} class="offer-search-id">
+        </div>
+        <div class="offer-search-to-texts-container">
+            <div class="offer-search-price-to-text to-text">{{ 'TO' | translate | lowercase}}</div>
+            <div class="offer-search-space-to-text to-text">{{ 'TO' | translate | lowercase}}</div>
+        </div>
+
+        <div class="offer-search-id-text">{{ 'SEARCH_OFFER_BY_ID' | translate}}:</div>
+
+
+    </div>
+    <div class="offer-search-start-searching" (click)="clickSearchOffers(id.value,priceMin.value,priceMax.value,spaceMin.value,spaceMax.value)">
+        <div class="offer-search-start-searching-text">{{ 'SEARCH' | translate | uppercase}}</div>
+    </div>
+    <div class="offer-search-offer-type-sellable" [class.selected]="currentOfferType === 'sellable'" (click)="changeOfferType('sellable')">{{ 'SALES' | translate | uppercase}}
+    </div>
+    <div class="offer-search-offer-type-rentable" [class.selected]="currentOfferType === 'rentable'" (click)="changeOfferType('rentable')">{{ 'RENTS' | translate | uppercase}}
+    </div>
+</div>

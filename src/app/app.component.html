@@ -1,0 +1,12 @@
+<div class="main-screen">
+    <div class="left-side-nav">
+        <app-side-nav-bar *ngIf="languageService.available"></app-side-nav-bar>
+    </div>
+    <div class="main-container">
+        <app-header>
+        </app-header>
+        <div class="page-content">
+            <router-outlet *ngIf="languageService.available"></router-outlet>
+        </div>
+    </div>
+</div>

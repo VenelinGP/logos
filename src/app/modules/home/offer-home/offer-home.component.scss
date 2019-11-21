@@ -1,0 +1,150 @@
+@import "../../../shared/variables.scss";
+@import "../../../shared/prefixes.scss";
+:host {
+    position: absolute;
+    display: inline-block;
+    width: 94%;
+    padding: 1%;
+    margin: 1%;
+    //height: 97.6%;
+    //padding-bottom: 47.95%;
+    background-color: #dddddd;
+    @media screen and (max-aspect-ratio: 3/4) {
+        width: 96%;
+    }
+    &.static {
+        @media screen and (max-aspect-ratio: 3/4) {
+            position: fixed;
+        }
+    }
+    >.logos-fb-like-us-container {
+        position: absolute;
+        display: block;
+        height: 7.73%;
+        width: 6.55%;
+        margin: 1%;
+        left: 90%;
+        top: 50%;
+        @media screen and (max-aspect-ratio: 3/4) {
+            position: relative;
+            float: left;
+            left: 0;
+            top: 0;
+            width: 20%;
+            margin-right: 57%;
+        }
+        >.logos-fb-like-us-image {
+            position: relative;
+            display: block;
+            cursor: pointer;
+            width: 41.27%;
+            height: 64.54%;
+            @media screen and (max-aspect-ratio: 3/4) {
+                width: 58%;
+            }
+        }
+        >.logos-fb-like-us-text {
+            position: relative;
+            bottom: 0;
+            cursor: pointer;
+            padding-top: 7%;
+            color: $red;
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: $pc-text4;
+            font-family: $pt-sans;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text2;
+            }
+        }
+    }
+    >.logos-fb-comments-container {
+        position: absolute;
+        display: block;
+        height: 7.73%;
+        width: 6.55%;
+        margin: 1%;
+        left: 90%;
+        top: 60%;
+        @media screen and (max-aspect-ratio: 3/4) {
+            position: relative;
+            float: left;
+            left: 0;
+            top: 0;
+            width: 20%;
+        }
+        >.logos-fb-comments-image {
+            position: relative;
+            display: block;
+            cursor: pointer;
+            width: 41.27%;
+            height: 64.54%;
+            @media screen and (max-aspect-ratio: 3/4) {
+                width: 58%;
+                float: right;
+            }
+        }
+        >.logos-fb-comments-text {
+            position: relative;
+            cursor: pointer;
+            bottom: 0;
+            padding-top: 7%;
+            color: $red;
+            font-weight: 600;
+            font-size: $pc-text4;
+            font-family: $pt-sans;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text2;
+                float: right;
+            }
+        }
+    }
+    >.home-menu-overlay {
+        position: absolute;
+        display: block;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        background-color: $grey;
+        -webkit-transition: opacity 500ms ease-in-out;
+        -moz-transition: opacity 500ms ease-in-out;
+        -ms-transition: opacity 500ms ease-in-out;
+        -o-transition: opacity 500ms ease-in-out;
+        transition: opacity 500ms ease-in-out;
+        &.show-overlay {
+            pointer-events: visible;
+            opacity: 0.9;
+        }
+    }
+    >app-comments {
+        top: 26.83%;
+        left: 29.93%;
+    }
+    >app-area-filter {
+        position: relative;
+        display: block;
+        float: left;
+        width: 19%;
+        padding-bottom: 25%;
+        margin: 1%;
+        @media screen and (max-aspect-ratio: 3/4) {
+            width: 38%;
+            padding-bottom: 58%;
+        }
+    }
+    >app-offer-search {
+        position: relative;
+        float: left;
+        display: block;
+        width: 27%;
+        padding-bottom: 25%;
+        margin: 1%;
+        @media screen and (max-aspect-ratio: 3/4) {
+            width: 58%;
+            padding-bottom: 58%;
+        }
+    }
+}

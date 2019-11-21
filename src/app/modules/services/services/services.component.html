@@ -1,0 +1,9 @@
+<div id="services-container">
+  <div id="content-container">
+    <h1 id="title" *ngIf="ls.currentLanguage.SERVICES_HEADER">
+      {{ls.translate('SERVICES_HEADER') | uppercase}}
+    </h1>
+    <div id="content" *ngIf="ls.currentLanguage.SERVICES_ARTICLE" [innerHTML]="ls.translate('SERVICES_ARTICLE')">
+    </div>
+  </div>
+</div>

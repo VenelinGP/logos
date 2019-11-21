@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+        "target": "https://api.logos.bg/api/",
+        "secure": false,
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div id="how-to-sell-container">
+  <div id="content-container">
+    <h1 id="title" *ngIf="ls.currentLanguage.NOTARY_CALCULATOR">
+      {{ls.translate('HOW_TO_SELL_YOUR_ESTATE') | uppercase}}
+    </h1>
+    <div id="how-to-sell-content" *ngIf="ls.currentLanguage.HOW_TO_ARTICLES">
+      <div class="article-container" *ngFor="let howTo of ls.currentLanguage.HOW_TO_ARTICLES; index as i">
+        <h2 class="subtitle">{{howTo.header}}</h2>
+        <div class='article-content-container'>
+          <img class="how-to-sell-image" [src]="'assets/images/how_to_'+(i+1)+'.png'" alt="how-to-sell-img">
+          <div class="how-to-sell-text" [innerHTML]="howTo.article" ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

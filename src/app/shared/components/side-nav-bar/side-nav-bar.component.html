@@ -1,0 +1,55 @@
+<div id="nav-container">
+    <div id="languages-container">
+        <a class="language-button" [ngClass]="{'selected':currentLanguageKey === 'bg'}" (click)="setLang('bg')">BG</a>
+        <a class="language-button" [ngClass]="{'selected':currentLanguageKey === 'en'}" (click)="setLang('en')">EN</a>
+        <a class="language-button" [ngClass]="{'selected':currentLanguageKey === 'ru'}" (click)="setLang('ru')">RU</a>
+    </div>
+    <div id="logo-container">
+        <img [src]="'assets/images/logos_logo.png'" alt="Logos_logo">
+    </div>
+    <nav id="menu-container">
+        <ul id="menu-container-list">
+            <li class='menu-item' (click)="navService.homeClicked()" [ngClass]="{'selected':navService.homeSelected}">
+                <a>{{'HOME' | translate | uppercase}}</a>
+            </li>
+            <li class='menu-item' (click)="navService.estatesClicked()" [ngClass]="{'selected':navService.estatesSelected}">
+                <a>{{'REAL_ESTATES' | translate | uppercase}}</a>
+            </li>
+            <ul class='sub-menu' *ngIf="true">
+                <li class="submenu-item" [ngClass]="{'selected':navService.salesSelected}" (click)="navService.salesClicked()">
+                    <a>{{'SALES' | translate }}</a></li>
+                <li class="submenu-item" [ngClass]="{'selected':navService.rentsSelected}" (click)="navService.rentsClicked()">
+                    <a>{{'RENTS' | translate }}</a></li>
+                <li class="submenu-item" [ngClass]="{'selected':navService.createOfferSelected}" (click)="navService.createOfferClicked()"><a>{{'CREATE_OFFER' | translate}}</a></li>
+                <li class="submenu-item" [ngClass]="{'selected':navService.subscriptionSelected}" (click)="navService.subscriptionClicked()"><a>{{'SUBSCRIPTION' | translate }}</a></li>
+            </ul>
+            <li class='menu-item' (click)="navService.newsClicked()" [ngClass]="{'selected':navService.newsSelected}">
+                <a>{{'NEWS' | translate | uppercase}}</a>
+            </li>
+            <li class='menu-item' (click)="navService.servicesClicked()" [ngClass]="{'selected':navService.servicesSelected}">
+                <a>{{'SERVICES' | translate | uppercase}}</a>
+            </li>
+            <li class='menu-item' (click)="navService.helpClicked()" [ngClass]="{'selected':navService.helpSelected}">
+                <a>{{ 'HELPFUL' | translate | uppercase}}</a>
+            </li>
+            <ul class='sub-menu' *ngIf="navService.helpSelected">
+                <li class="submenu-item" [ngClass]="{'selected':navService.regionAndCountrySelected}" (click)="navService.countryAndRegionClicked()"><a>{{'ABOUT_COUNTRY_AND_REGION' | translate }}</a></li>
+                <li class=" submenu-item" [ngClass]="{'selected':navService.notaryCalculatorSelected}" (click)="navService.notaryCalculatorClicked()"><a>{{'NOTARY_CALCULATOR' | translate }}</a></li>
+                <li class="submenu-item" [ngClass]="{'selected':navService.howToSellSelected}" (click)="navService.howToSellClicked()"><a>{{'HOW_TO_SELL_YOUR_ESTATE' | translate }}</a></li>
+            </ul>
+            <li class='menu-item'>
+                <a (click)="navService.aboutClicked()" [ngClass]="{'selected':navService.aboutSelected}">
+          {{'ABOUT_US' | translate | uppercase}}</a>
+            </li>
+            <ul class='sub-menu' *ngIf="navService.aboutSelected">
+                <li class="submenu-item" [ngClass]="{'selected':navService.historySelected}" (click)="navService.historyClicked()"><a>{{'COMPANY_HISTORY' | translate }}</a></li>
+                <li class="submenu-item" [ngClass]="{'selected':navService.principlesSelected}" (click)="navService.principlesClicked()"><a>{{'PRINCIPLES'| translate }}</a></li>
+                <li class="submenu-item" [ngClass]="{'selected':navService.teamSelected}" (click)="navService.teamClicked()">
+                    <a>{{'TEAM' | translate }}</a></li>
+            </ul>
+            <li class='menu-item' (click)="navService.contactsClicked()" [ngClass]="{'selected':navService.contactsSelected}">
+                <a>{{'CONTACTS' | translate | uppercase}}</a>
+            </li>
+        </ul>
+    </nav>
+</div>

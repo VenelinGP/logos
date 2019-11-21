@@ -1,0 +1,69 @@
+@import "../../../shared/variables.scss";
+@import "../../../shared/prefixes.scss";
+:host {
+    >.area-filter-header {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 14.77%;
+        background-color: $red;
+        >.area-filter-header-text {
+            position: absolute;
+            display: block;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: $white;
+            font-size: $pc-header1;
+            font-family: $pt-sans;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-header1;
+            }
+        }
+    }
+    >.area-filter-content {
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 14.77%;
+        height: 85.23%;
+        background-color: $white;
+        overflow-y: scroll;
+        @include scrollable(2%);
+        >.area-filter-content-container {
+            position: absolute;
+            display: block;
+            width: 98%;
+            height: 90%;
+            top: 5%;
+            >.area-filter-areas-list {
+                position: absolute;
+                display: block;
+                list-style-type: none;
+                font-weight: 500;
+                font-size: $pc-text2;
+                font-family: $pt-sans;
+                color: $dark-grey;
+                padding-left: 5%;
+                -webkit-margin-before: 0;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    font-size: $mb-text2;
+                }
+                >.area-filter-area {
+                    cursor: pointer;
+                    &.hidden {
+                        display: none;
+                    }
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    &.selected {
+                        font-family: $pt-sans;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

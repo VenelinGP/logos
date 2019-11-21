@@ -1,0 +1,35 @@
+<div class="offer-slider-header  unselectable">
+    <div class="offer-slider-header-text">{{ 'RENTS' | translate | uppercase}}</div>
+</div>
+<div class="offer-slider-content">
+    <div class="offer-slider-content-container select-offer-{{selectedOfferIndex}}" *ngIf="offers.length>0">
+        <div class="offer-wrapper" *ngFor="let offer of offers; let i = index">
+            <div class="offer-slider-info">
+                <div class="offer-slider-info-area">{{offer.area.getValue()}}</div>
+                <div class="offer-slider-info-subtype info-text">{{offer.subType.getValue()}}</div>
+                <div class="offer-slider-info-space info-text">{{ 'SPACE' | translate | lowercase}}: {{offer.space}} кв.м
+                </div>
+                <div class="offer-slider-info-offer-id info-text">{{"OFFER" |translate | lowercase}}: {{offer.id}}</div>
+                <div class="offer-slider-info-price info-text">{{httpService.getConvertedPrice(offer.price)}} {{ httpService.selectedCurrency | translate}}
+                </div>
+            </div>
+            <div class="offer-slider-picture-container">
+                <img class="offer-slider-picture  unselectable" *ngIf="offer.pictures.length > 0" src="{{offer.pictures[0]}}" alt="property picture" (click)="clickOnSeeMore(offer)" />
+                <img class="offer-slider-picture  unselectable" *ngIf="!(offer.pictures.length>0)" src="{{noImageAvailableUrl}}" alt="property picture" (click)="clickOnSeeMore(offer)" />
+            </div>
+            <div class="offer-slider-see-more  unselectable" (click)="clickOnSeeMore(offer)">
+                {{ 'SEE_MORE' | translate | lowercase}}
+            </div>
+        </div>
+    </div>
+    <div class="offer-slider-arrow-left-container" (click)="clickArrowLeft()">
+        <div class="offer-slider-arrow-left"></div>
+    </div>
+    <div class="offer-slider-arrow-right-container" (click)="clickArrowRight()">
+        <div class="offer-slider-arrow-right"></div>
+    </div>
+    <div class="offer-slider-circles-container">
+        <div class="offer-slider-circle" *ngFor="let offer of offers; let i = index" [class.circle-selected]=" i == selectedOfferIndex" (click)="clickCircle(i)">
+        </div>
+    </div>
+</div>

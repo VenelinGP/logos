@@ -1,0 +1,25 @@
+<div id="about-container">
+  <div id="headers-container">
+    <h2 class="header" [ngClass]="{'selected': navService.bulgariaSelected}" (click)="navService.bulgariaClicked()">
+      {{ls.translate('BULGARIA') | uppercase}}</h2>
+    <h2 class="header" [ngClass]="{'selected': navService.varnaSelected}" (click)="navService.varnaClicked()">
+      {{ls.translate('VARNA') | uppercase}}</h2>
+    <h2 class="header" [ngClass]="{'selected': navService.regionsSelected}" (click)="navService.regionsClicked()">
+      {{ls.translate('AREAS_AND_REGIONS') | uppercase}}</h2>
+  </div>
+
+  <div class="content-container" *ngIf="ls.currentLanguage.BULGARIA_ARTICLE && navService.bulgariaSelected">
+    <h3 class="title">{{ls.translate('BULGARIA')}}</h3>
+    <div class="content" [innerHTML] = ls.currentLanguage.BULGARIA_ARTICLE></div>
+  </div>
+  <div class="content-container" *ngIf="ls.currentLanguage.VARNA_ARTICLE && navService.varnaSelected">
+    <h3 class="title">{{ls.translate('VARNA')}}</h3>
+    <div class="content" [innerHTML] = ls.currentLanguage.VARNA_ARTICLE></div>
+  </div>
+
+  <div class="content-container" *ngIf="ls.currentLanguage.REGIONS && navService.regionsSelected">
+    <div id="regions-container">
+      <div class="region-title" *ngFor="let region of ls.currentLanguage.REGIONS">{{region.header}}</div>
+    </div>
+  </div>
+</div>

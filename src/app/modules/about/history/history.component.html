@@ -1,0 +1,8 @@
+<div id="history-container">
+  <div id="content-container">
+    <h1 id="title" *ngIf="ls.currentLanguage.HISTORY_HEADER">
+      {{ls.translate('HISTORY_HEADER') | uppercase}}
+    </h1>
+    <div id="content" *ngIf="ls.currentLanguage.HISTORY_ARTICLE" [innerHTML]="ls.translate('HISTORY_ARTICLE')"></div>
+  </div>
+</div>

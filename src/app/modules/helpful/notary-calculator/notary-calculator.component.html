@@ -1,0 +1,34 @@
+<div id="notary-container">
+  <div id="content-container">
+    <h1 id="title" *ngIf="ls.currentLanguage.NOTARY_CALCULATOR">
+      {{ls.translate('NOTARY_CALCULATOR') | uppercase}}
+    </h1>
+    <div id="notary-content">
+      <div id="notary-text" *ngIf="ls.currentLanguage.NOTARY_CALCULATOR_TOP_TEXT"
+           [innerHTML]="ls.translate('NOTARY_CALCULATOR_TOP_TEXT')"></div>
+      <div id="form">
+        <label for="contract-value" id="contract-value-text">{{ls.translate('VALUE_OF_DEAL')}}</label>
+        <input #input type="number" id="contract-value" (input)="onValueUpdate(input)">
+        <div id="currency">{{ls.translate('BGN')}}</div>
+      </div>
+      <div id="notary-calculations">
+        <div class="tax">
+          <div id="notary-tax">{{ls.translate('NOTARIAL_FEE')}}</div>
+          <div class="value">{{notaryTax}} {{ls.translate('BGN')}}</div>
+        </div>
+        <div class="tax">
+          <div id="registration-tax">{{ls.translate('REGISTER_FEE')}}</div>
+          <div class="value">{{registrationTax}} {{ls.translate('BGN')}}</div>
+        </div>
+        <div class="tax">
+          <div id="council-tax">{{ls.translate('AREA_FEE')}}</div>
+          <div class="value">{{councilTax}} {{ls.translate('BGN')}}</div>
+        </div>
+        <div class="tax">
+          <div id="total">{{ls.translate('TOTAL_FEE')}}</div>
+          <div class="value">{{totalTax}} {{ls.translate('BGN')}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

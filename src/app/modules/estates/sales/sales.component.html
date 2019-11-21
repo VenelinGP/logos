@@ -1,0 +1,128 @@
+<div class="upper-part-options unselectable">
+    <div class="filter-results-button" (click)="showFilterMenu()">
+        <div class="filter-results-button-text">
+            {{ 'FILTER_RESULTS' | translate | uppercase }}
+        </div>
+    </div>
+    <div class="currency-type-container">
+        <div class="currency-type-text" [class.selected]="httpService.selectedCurrency === 'EUR'" (click)="httpService.changeSelectedCurrencyTo('EUR')">
+            EUR
+        </div>
+    </div>
+    <div class="currency-type-container">
+        <div class="currency-type-text" [class.selected]="httpService.selectedCurrency === 'BGN'" (click)="httpService.changeSelectedCurrencyTo('BGN')">
+            {{ ls.translate('LEVA') | uppercase }}
+        </div>
+    </div>
+    <div class="sort-container" [class.hidden]="filteredOffers.length < 2">
+        <div class="sort-by-price-container">
+            <div class="sort-by-price-ascending" (click)="sortByPrice('ascending')">
+                &#x25B2;
+            </div>
+            <div class="sort-by-price-text">
+                {{ 'PRICE' | translate | uppercase }}
+            </div>
+            <div class="sort-by-price-descending" (click)="sortByPrice('descending')">
+                &#x25BC;
+            </div>
+        </div>
+        <!-- <div class="sort-by-date-container">
+            <div class="sort-by-date-descending" (click)="sortByDate('ascending')">&#x25BC;
+            </div>
+            <div class="sort-by-date-text">{{ ls.translate('LATEST') | uppercase}}</div>
+
+            <div class="sort-by-date-ascending" (click)="sortByDate('descending')">&#x25B2;
+            </div>
+        </div> -->
+        <div class="sort-by-space-container">
+            <div class="sort-by-space-ascending" (click)="sortBySpace('ascending')">
+                &#x25B2;
+            </div>
+            <div class="sort-by-space-text">
+                {{ 'SPACE' | translate | uppercase }}
+            </div>
+            <div class="sort-by-space-descending" (click)="sortBySpace('descending')">
+                &#x25BC;
+            </div>
+        </div>
+    </div>
+    <div class="paginator-container" [class.hidden]="maxPages < 2">
+        <div class="arrow-previous-page all-cells" [class.disabled]="selectedFilteredPageIndex === 1" (click)="clickPreviousPage()">
+            <div class="cell-text">
+                << </div>
+            </div>
+            <div class="page-number all-cells" (click)="clickPageIndex(1)" [class.page-selected]="selectedFilteredPageIndex === 1">
+                <div class="cell-text">
+                    1
+                </div>
+            </div>
+
+            <div class="left-dots all-cells" [class.hidden]="!canShowLeftDots">
+                <div class="cell-text">...</div>
+            </div>
+
+            <div class="page-number all-cells" *ngFor="let page of middlePages" (click)="clickPageIndex(page)" [class.page-selected]="selectedFilteredPageIndex === page">
+                <div class="cell-text">
+                    {{ page }}
+                </div>
+            </div>
+
+            <div class="right-dots all-cells" [class.hidden]="!canShowRightDots">
+                <div class="cell-text">...</div>
+            </div>
+
+            <div class="page-number all-cells" (click)="clickPageIndex(maxPages)" [class.page-selected]="selectedFilteredPageIndex === maxPages">
+                <div class="cell-text">
+                    {{ maxPages }}
+                </div>
+            </div>
+
+            <div class="arrow-next-page all-cells" [class.disabled]="selectedFilteredPageIndex === maxPages" (click)="clickNextPage()">
+                <div class="cell-text">>></div>
+            </div>
+        </div>
+    </div>
+
+    <app-offer-preview class="unselectable" *ngFor="let offer of shownOffers" [offer]="offer">
+    </app-offer-preview>
+
+    <div class="filtered-offers-menu-overlay" [class.show-overlay]="offersFilterVisible" (click)="hideFilterMenu()"></div>
+    <div class="filter-offers-input-block-overlay" [class.disabled]="!offersFilterVisible" (click)="hideFilterMenu()">
+    </div>
+    <div class="offers-filter-container" id="offers-filter" [class.show-offers-filter]="offersFilterVisible">
+        <!-- <app-area-filter></app-area-filter> -->
+        <!-- <app-offer-search></app-offer-search> -->
+    </div>
+    <!-- <div class="close-button" [class.show-close-button]="offersFilterVisible"></div> -->
+    <div class="bottom-part-options unselectable">
+        <div class="paginator-container" [class.hidden]="maxPages < 2">
+            <div class="arrow-previous-page all-cells" [class.disabled]="selectedFilteredPageIndex === 1" (click)="clickPreviousPage()">
+                <div class="cell-text">
+                    << </div>
+                </div>
+                <div class="page-number all-cells" (click)="clickPageIndex(1)" [class.page-selected]="selectedFilteredPageIndex === 1">
+                    <div class="cell-text">
+                        1
+                    </div>
+                </div>
+                <div class="left-dots all-cells" [class.hidden]="!canShowLeftDots">
+                    <div class="cell-text">...</div>
+                </div>
+                <div class="page-number all-cells" *ngFor="let page of middlePages" (click)="clickPageIndex(page)" [class.page-selected]="selectedFilteredPageIndex === page">
+                    <div class="cell-text">
+                        {{ page }}
+                    </div>
+                </div>
+                <div class="right-dots all-cells" [class.hidden]="!canShowRightDots">
+                    <div class="cell-text">...</div>
+                </div>
+                <div class="page-number all-cells" (click)="clickPageIndex(maxPages)" [class.page-selected]="selectedFilteredPageIndex === maxPages">
+                    <div class="cell-text">
+                        {{ maxPages }}
+                    </div>
+                </div>
+                <div class="arrow-next-page all-cells" [class.disabled]="selectedFilteredPageIndex === maxPages" (click)="clickNextPage()">
+                    <div class="cell-text">>></div>
+                </div>
+            </div>
+        </div>

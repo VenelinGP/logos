@@ -1,0 +1,29 @@
+@import '../../../shared/styles/constants';
+@import '../../../shared/styles/mixins';
+
+#history-container {
+  @include greyContainer(50%);
+
+  #content-container {
+    background-color: $white;
+    width: 100%;
+    #title {
+      width: 100%;
+      background-color: $main-red;
+      color: $white;
+      text-align: center;
+      font-size: 1.6em;
+      font-weight: normal;
+    }
+    #content {
+      padding: 30px;
+      ul {
+        list-style-type: square;
+        li {
+          margin: 20px;
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+}

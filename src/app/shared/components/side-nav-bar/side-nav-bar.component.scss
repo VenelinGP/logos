@@ -1,0 +1,95 @@
+@import '../../styles/constants';
+@import '../../styles/mixins';
+#nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 13%;
+    height: 100%;
+    background-color: $main-red;
+    @include removeSelection;
+    #languages-container {
+        position: absolute;
+        top: 3px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        color: $white;
+        font-family: $menu-text-font;
+        font-size: 1.5vw;
+        justify-content: flex-end;
+        .selected {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        a {
+            padding-right: 5px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    #logo-container {
+        position: absolute;
+        top: 8%;
+        width: 100%;
+        img {
+            width: 90%;
+            margin-left: 5%
+        }
+    }
+    #menu-container {
+        position: absolute;
+        width: 100%;
+        font-family: $menu-text-font;
+        @include center(false, true);
+        #menu-container-list {
+            width: 100%;
+            list-style: none;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            padding-inline-start: 0;
+            .selected {
+                text-decoration: underline;
+                font-weight: 600;
+            }
+            .menu-item {
+                font-size: 1.3vw;
+                width: 100%;
+                text-align: center;
+                margin: 2.5vh 0;
+                &:hover {
+                    cursor: pointer;
+                }
+                a {
+                    color: $white;
+                    text-decoration: none;
+                }
+                .selected {
+                    text-decoration: underline;
+                    font-weight: 600;
+                }
+            }
+            .sub-menu {
+                list-style: none;
+                text-decoration: none;
+                padding-inline-start: 0;
+                .submenu-item {
+                    font-size: 0.8vw;
+                    text-align: center;
+                    color: $white;
+                    font-family: $menu-text-font;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    a {
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

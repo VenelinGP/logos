@@ -1,0 +1,137 @@
+export interface ILanguage {
+  HOME: string;
+  REAL_ESTATES: string;
+  SALES: string;
+  RENTS: string;
+  CREATE_OFFER: string;
+  SUBSCRIPTION: string;
+  NEWS: string;
+  SERVICES: string;
+  HELPFUL: string;
+  ABOUT_COUNTRY_AND_REGION: string;
+  NOTARY_CALCULATOR: string;
+  HOW_TO_SELL_YOUR_ESTATE: string;
+  ABOUT_US: string;
+  COMPANY_HISTORY: string;
+  PRINCIPLES: string;
+  TEAM: string;
+  CONTACTS: string;
+  LIKE_US: string;
+  COMMENT: string;
+  COMMENTS: string;
+  SPACE: string;
+  PRICE: string;
+  FROM: string;
+  TO: string;
+  SEARCH_OFFER_BY_ID: string;
+  SEE_MORE: string;
+  AREAS: string;
+  AREA: string;
+  SEARCH: string;
+  OFFERS_COUNT: string;
+  NO_OFFERS_AVAILABLE: string;
+  OFFERS_AVAILABLE: string;
+  PARK_STADIUM: string;
+  FILTER_RESULTS: string;
+  SELECTED: string;
+  LATEST: string;
+  HERE_YOU_CAN_CREATE_OFFER: string;
+  PROPERTY_LOCATION: string;
+  LOCATION: string;
+  OFFER_TYPE: string;
+  OFFER: string;
+  PROPERTY_TYPE: string;
+  PROPERTY_DESCRIPTION: string;
+  DESCRIPTION: string;
+  CONTACT_PERSON: string;
+  PICTURE: string;
+  CHOSE_FILE: string;
+  YOUR_NAME: string;
+  PHONE: string;
+  MOBILE: string;
+  EMAIL: string;
+  REMARKS: string;
+  SEND: string;
+  ADDRESS: string;
+  FAX: string;
+  SUBSCRIBE_TO_OFFERS: string;
+  OFFER_SUBSCRIPTION_TOP_TEXT: string;
+  OFFER_SUBSCRIPTION_BOTTOM_TEXT: string;
+  NOTARY_CALCULATOR_TOP_TEXT: string;
+  VALUE_OF_DEAL: string;
+  CALCULATE: string;
+  NOTARIAL_FEE: string;
+  REGISTER_FEE: string;
+  AREA_FEE: string;
+  BIRTH_DATE: string;
+  EDUCATION: string;
+  SPOKEN_LANGUAGES: string;
+  ADDITIONAL_QUALIFICATIONS: string;
+  WORKING_IN_REAL_ESTATE: string;
+  INTERESTS: string;
+  SEE_ON_MAP: string;
+  SEND_REQUEST: string;
+  IS_LUXURY: string;
+  IS_IN_COMPLEX: string;
+  FURNISHED: string;
+  BUILDING_TYPE: string;
+  YES: string;
+  NO: string;
+  FLOOR: string;
+  YEAR_OF_BUILD: string;
+  BULGARIA: string;
+  VARNA: string;
+  AREAS_AND_REGIONS: string;
+  LEVA: string;
+  SQUARE_METERS: string;
+  SOLD: string;
+  RENTED: string;
+  SELLABLE: string;
+  RENTABLE: string;
+  SPECIFICATIONS: string;
+  BGN: string;
+  EUR: string;
+  YARD_SPACE: string;
+  HEADER: string;
+  CONTACT_US: string;
+  LINK_TO_NEWS: string;
+  PUBLISHED_ON: string;
+
+  SERVICES_HEADER: string;
+  SERVICES_ARTICLE: string;
+
+  BULGARIA_HEADER: string;
+  BULGARIA_ARTICLE: string;
+
+  VARNA_HEADER: string;
+  VARNA_ARTICLE: string;
+
+  REGIONS: Array<{ header: string, article: string }>;
+
+  REGIONS_CENTRE: string;
+  REGIONS_ASPARUHOVO: string;
+  REGIONS_BRIZ: string;
+  REGIONS_VINICA: string;
+  REGIONS_VLADISLAVOVO: string;
+  REGIONS_VAZRAJDANE: string;
+  REGIONS_GALATA: string;
+  REGIONS_GRACKA: string;
+  REGIONS_ZIMNO_KINO: string;
+  REGIONS_KOLHOZEN: string;
+  REGIONS_LEVSKI: string;
+  REGIONS_LQTNO_KINO: string;
+  REGIONS_MLADOST: string;
+  REGIONS_TRAKATA: string;
+  REGIONS_CVETEN: string;
+  REGIONS_CHAIKA: string;
+
+  HOW_TO_ARTICLES: Array<{ header: string, article: string }>;
+
+  HISTORY_HEADER: string;
+  HISTORY_ARTICLE: string;
+
+  PRINCIPLES_HEADER: string;
+  PRINCIPLES_ARTICLE: string;
+}
+
+

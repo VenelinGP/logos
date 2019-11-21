@@ -1,0 +1,49 @@
+@import '../../../shared/styles/constants';
+@import '../../../shared/styles/mixins';
+
+#how-to-sell-container {
+  @include greyContainer(60%);
+
+  #content-container {
+    background-color: $white;
+    width: 100%;
+    #title {
+      width: 100%;
+      background-color: $main-red;
+      color: $white;
+      text-align: center;
+      font-size: 1.6em;
+      font-weight: normal;
+    }
+    #how-to-sell-content {
+      color: $dark-grey;
+      padding: 30px;
+      .article-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .subtitle {
+          color: $main-red;
+          margin-bottom: 20px;
+        }
+
+        .article-content-container {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          margin-bottom: 30px;
+          .how-to-sell-image {
+            margin-right: 20px;
+          }
+          .how-to-sell-text {
+            text-align: justify;
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+}

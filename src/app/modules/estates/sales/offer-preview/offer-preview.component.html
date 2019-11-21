@@ -1,0 +1,26 @@
+<div class="offer-preview-header unselectable">
+    <div class="offer-preview-header-text">{{httpService.getConvertedPrice(offer.price)}} {{ httpService.selectedCurrency | translate}}
+    </div>
+</div>
+<div class="offer-preview-content" *ngIf="offer">
+    <div class="offer-preview-content-picture-container">
+        <img class="offer-preview-content-picture unselectable " *ngIf="offer.pictures.length >0" src="{{offer.pictures[0]}}" alt="property picture" (click)="clickOnSeeMore(offer)" />
+        <img class="offer-preview-content-picture unselectable " *ngIf="!(offer.pictures.length >0)" src="{{noImageAvailableUrl}}" alt="property picture" (click)="clickOnSeeMore(offer)" />
+        <div *ngIf="offer.isSellable && !offer.isAvailable" class="offer-preview-not-free">
+            {{ 'SOLD' | translate | uppercase}}
+            <!-- <img _ngcontent-c9="" alt="pin" class="offer-preview-not-free-pin" src="https://logos.bg/assets/images/pin.png"> -->
+        </div>
+        <div *ngIf="!offer.isSellable && !offer.isAvailable" class="offer-preview-not-free">
+            {{ 'RENTED' | translate | uppercase}}
+        </div>
+    </div>
+    <div class="offer-preview-content-info">
+        <div class="offer-preview-info-area">{{offer.area.getValue()}}</div>
+        <div class="offer-preview-info-subtype info-text">{{offer.subType.getValue()}}</div>
+        <div class="offer-preview-info-space info-text">{{ 'SPACE' | translate | lowercase}}: {{offer.space}} кв.м</div>
+        <div class="offer-preview-info-offer-id info-text">{{"OFFER" |translate | lowercase}}: {{offer.id}}</div>
+        <div class="offer-preview-info-see-more unselectable" (click)="clickOnSeeMore(offer)">
+            {{ 'SEE_MORE' | translate | lowercase}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="area-filter-header">
+    <div class="area-filter-header-text">{{ 'AREAS' | translate | uppercase }}</div>
+</div>
+<div class="area-filter-content" *ngIf="areaService.areasNames.length > 0">
+    <div class="area-filter-content-container">
+        <ul class="area-filter-areas-list">
+            <li class="area-filter-area" *ngFor="let area of getSortedAreasByNames()" [class.selected]="area.isSelected" [class.hidden]="!area.isSelected" (click)="clickOnArea(area.id)">
+                -{{areaService.getAreaName(area.name)}}
+            </li>
+            <li class="area-filter-area" *ngFor="let area of getSortedAreasByNames()" [class.selected]="area.isSelected" [class.hidden]="area.isSelected" (click)="clickOnArea(area.id)">
+                -{{areaService.getAreaName(area.name)}}
+            </li>
+        </ul>
+    </div>
+</div>

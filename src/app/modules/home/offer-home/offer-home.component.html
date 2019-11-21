@@ -1,0 +1,18 @@
+<app-offer-slider-sellable></app-offer-slider-sellable>
+<app-offer-slider-rentable></app-offer-slider-rentable>
+<!-- <app-area-filter id="area-filter" class="unselectable"></app-area-filter> -->
+<app-offer-search class="unselectable"></app-offer-search>
+<app-offer-map></app-offer-map>
+<div class="logos-fb-like-us-container unselectable">
+    <img class="logos-fb-like-us-image" src={{fbLikePngUrl}} alt="facebook like" (click)="clickFbLikeUsPage()">
+    <div class="logos-fb-like-us-text" (click)="clickFbLikeUsPage()">
+        {{ 'LIKE_US' | translate | uppercase}}
+    </div>
+</div>
+<div class="logos-fb-comments-container unselectable">
+    <img class="logos-fb-comments-image" src={{fbCommentsPngUrl}} alt="facebook logo" (click)="clickFbShowComments()">
+    <div class="logos-fb-comments-text" (click)="clickFbShowComments()">
+        {{ 'COMMENT' | translate | uppercase}}
+    </div>
+</div>
+<div class="home-menu-overlay" [class.show-overlay]="bigMapShown" (click)="clickHomeOverlay()"></div>

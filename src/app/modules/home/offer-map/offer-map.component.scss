@@ -1,0 +1,254 @@
+@import "../../../shared/variables";
+@import "../../../shared/prefixes";
+:host {
+    position: absolute;
+    bottom: 2%;
+    right: 10%;
+    float: left;
+    display: block;
+    width: 38%;
+    padding-bottom: 24.5%;
+    margin: 1%;
+    -webkit-transition: width 600ms ease-in-out, padding 400ms ease-in-out;
+    -moz-transition: width 600ms ease-in-out, padding 400ms ease-in-out;
+    -ms-transition: width 600ms ease-in-out, padding 400ms ease-in-out;
+    -o-transition: width 600ms ease-in-out, padding 400ms ease-in-out;
+    transition: width 600ms ease-in-out, padding 400ms ease-in-out;
+    @media screen and (max-aspect-ratio: 3/4) {
+        position: relative;
+        width: 98%;
+        padding-bottom: 63%;
+        right: 0;
+        bottom: 0;
+    }
+    &.big-size {
+        //transform: translate(-50%,-50%);
+        width: 82%;
+        padding-bottom: 50.1%;
+        z-index: 100;
+        bottom: 2%;
+        right: 10%;
+        -webkit-transition: width 400ms ease-in-out, padding 600ms ease-in-out;
+        -moz-transition: width 400ms ease-in-out, padding 600ms ease-in-out;
+        -ms-transition: width 400ms ease-in-out, padding 600ms ease-in-out;
+        -o-transition: width 400ms ease-in-out, padding 600ms ease-in-out;
+        transition: width 400ms ease-in-out, padding 600ms ease-in-out;
+        @media screen and (max-aspect-ratio: 3/4) {
+            position: relative;
+            float: left;
+            display: block;
+            width: 98%;
+            padding-bottom: 63%;
+            right: 0;
+            bottom: 0;
+        }
+        >.map-overlay-block {
+            display: block;
+        }
+    }
+    >.map-overlay-block {
+        position: fixed;
+        display: none;
+        width: 200vw;
+        height: 200vw;
+        left: 0;
+        top: 0;
+    }
+    >.map-content {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        overflow: hidden;
+        >.map-info-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            >.resize-map-button {
+                position: absolute;
+                display: block;
+                cursor: pointer;
+                width: 2.3vw;
+                padding-bottom: 2.3vw;
+                background-color: $red;
+                right: 0;
+                top: 0;
+                margin: 0.5vw;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    display: none;
+                }
+                >.resize-map-button-zoom-in-icon,
+                .resize-map-button-zoom-out-icon {
+                    position: absolute;
+                    display: block;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+            >.city-name {
+                position: absolute;
+                display: inline-block;
+                font-family: $pt-sans;
+                color: $dark-grey;
+                font-size: $pc-header1*2;
+                text-align: center;
+                top: 35%;
+                right: 23%;
+                text-decoration: underline;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    font-size: $mb-header1*2;
+                }
+            }
+            >.map-legend {
+                position: absolute;
+                display: inline-block;
+                bottom: 5%;
+                right: 5%;
+                max-width: 13vw;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    max-width: 40vw;
+                }
+                >.all-texts {
+                    position: relative;
+                    display: inline-block;
+                    font-family: $pt-sans;
+                    color: $dark-grey;
+                    font-size: $pc-text3;
+                    width: 100%;
+                    text-align: left;
+                    margin: 1%;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        font-size: $mb-text2;
+                    }
+                    >.colour {
+                        position: relative;
+                        display: block;
+                        float: left;
+                        width: 1vw;
+                        padding-bottom: 1vw;
+                        margin-right: 0.3vw;
+                        @media screen and (max-aspect-ratio: 3/4) {
+                            width: 3vw;
+                            padding-bottom: 3vw;
+                            margin-right: 1vw;
+                        }
+                    }
+                }
+                >.area-no-offers {
+                    >.colour {
+                        background-color: $area-no-offers;
+                    }
+                }
+                >.area-offers-available {
+                    >.colour {
+                        background-color: $area-offers-available;
+                    }
+                }
+                >.area-unavailable {
+                    >.colour {
+                        background-color: $area-unavailable;
+                    }
+                }
+                >.area-selected {
+                    >.colour {
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+        >svg {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            fill: $area-no-offers;
+            >g {
+                //-webkit-transform: translate(-10px, -630px);
+                //-moz-transform: translate(-10px, -630px);
+                //-ms-transform: translate(-10px, -630px);
+                //-o-transform: translate(-10px, -630px);
+                //transform: translate(-10px, -630px);
+                >path {
+                    pointer-events: all;
+                    fill: $area-unavailable;
+                    &.area-no-offers {
+                        fill: $area-no-offers;
+                        &:hover,
+                        &.selected {
+                            fill: $red;
+                            opacity: 0.5;
+                        }
+                    }
+                    &.area-offers-available {
+                        fill: $area-offers-available;
+                        &:hover,
+                        &.selected {
+                            fill: $red;
+                        }
+                    }
+                }
+            }
+        }
+        >.area-info-pop-up {
+            position: fixed;
+            display: inline-block;
+            pointer-events: none;
+            background-color: black;
+            opacity: 0.8;
+            padding: 0.2% 0.5%;
+            border-radius: 0.5vw;
+            -webkit-transform: translate(-50%, -110%);
+            -moz-transform: translate(-50%, -110%);
+            -ms-transform: translate(-50%, -110%);
+            -o-transform: translate(-50%, -110%);
+            transform: translate(-50%, -110%);
+            -webkit-transition: opacity 350ms ease-in-out;
+            -moz-transition: opacity 350ms ease-in-out;
+            -ms-transition: opacity 350ms ease-in-out;
+            -o-transition: opacity 350ms ease-in-out;
+            transition: opacity 350ms ease-in-out;
+            @media screen and (max-aspect-ratio: 3/4) {
+                padding: 1%;
+            }
+            &.hide-info {
+                opacity: 0;
+                -webkit-transition: opacity 0ms;
+                -moz-transition: opacity 0ms;
+                -ms-transition: opacity 0ms;
+                -o-transition: opacity 0ms;
+                transition: opacity 0ms;
+            }
+            >.pointer {
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 50%;
+                background-color: black;
+                transform: translate(-50%, 50%) rotate(45deg);
+                width: 0.6vw;
+                height: 0.6vw;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    width: 1.5vw;
+                    height: 1.5vw;
+                }
+            }
+            >div {
+                position: relative;
+                font-family: $pt-sans;
+                color: $white;
+                font-size: $pc-text2;
+                text-align: center;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    font-size: $mb-text4;
+                }
+            }
+        }
+    }
+}

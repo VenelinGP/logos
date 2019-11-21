@@ -1,0 +1,388 @@
+@import "../../../shared/variables";
+@import "../../../shared/prefixes";
+:host {
+    >.offer-search-content {
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        background-color: $white;
+        >.offer-search-property-types-container {
+            display: inline-block;
+            position: absolute;
+            top: 6%;
+            left: 4%;
+            width: 40%;
+            font-family: $pt-sans;
+            color: $dark-grey;
+            font-size: $pc-text2;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text3;
+            }
+            >.offer-search-property-type {
+                padding: 1%;
+                cursor: pointer;
+                &.selected {
+                    background-color: $grey;
+                }
+                &.is-checked {
+                    text-decoration: underline;
+                    font-family: $pt-sans;
+                    font-weight: bold;
+                }
+            }
+        }
+        >.offer-search-property-subtypes-container {
+            display: inline-block;
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            background-color: $grey;
+            width: 40%;
+            padding-left: 2%;
+            font-family: $pt-sans;
+            color: $dark-grey;
+            font-size: $pc-text2;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text3;
+            }
+            >.offer-search-property-subtype {
+                line-height: 120%;
+                padding: 1%;
+                cursor: pointer;
+                &.selected {
+                    font-family: $pt-sans;
+                    font-weight: bold;
+                    font-size: $pc-text2;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        font-size: $mb-text3;
+                    }
+                }
+                >.offer-search-subtype-checkbox {
+                    position: relative;
+                    bottom: -0.2vw;
+                    margin: 0;
+                    width: 0.8vw;
+                    height: 0.8vw;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        width: 2.5vw;
+                        height: 2.5vw;
+                        bottom: -0.5vw;
+                    }
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+            }
+        }
+        >.offer-search-property-options-container {
+            display: inline-block;
+            position: absolute;
+            top: 45%;
+            left: 6.5%;
+            width: 45%;
+            font-family: $pt-sans;
+            color: $dark-grey;
+            font-size: $pc-text2;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text3;
+            }
+            >.offer-search-property-option {
+                padding: 1%;
+                &.selected {
+                    font-family: $pt-sans;
+                    font-weight: bold;
+                    font-size: $pc-text2;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        font-size: $mb-text3;
+                    }
+                }
+                >.offer-search-option-checkbox {
+                    position: relative;
+                    bottom: -0.2vw;
+                    margin: 0 3% 0 0;
+                    width: 0.8vw;
+                    height: 0.8vw;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        width: 2.3vw;
+                        height: 2.5vw;
+                        bottom: -0.5vw;
+                    }
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+            }
+        }
+        >.offer-search-numeric-input {
+            position: absolute;
+            display: inline-block;
+            width: 92%;
+            margin: 0 4%;
+            top: 55%;
+            color: $dark-grey;
+            font-family: $pt-sans;
+            font-size: $pc-text2;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text3;
+            }
+            >.offer-search-from-texts-container,
+            .offer-search-to-texts-container {
+                position: relative;
+                float: left;
+                display: inline-block;
+                >.from-text,
+                .to-text {
+                    position: relative;
+                    float: none;
+                    //width: 100%;
+                    line-height: 150%;
+                    font-size: $pc-text2;
+                    font-family: $pt-sans;
+                    margin: 0.1vw 0.2vw;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        font-size: $mb-text3;
+                    }
+                }
+                &.offer-search-to-texts-container {
+                    //margin-left: 1vw;
+                    float: right;
+                }
+            }
+            >.offer-search-from-inputs-container,
+            .offer-search-to-inputs-container {
+                position: relative;
+                float: left;
+                display: inline-block;
+                width: 16%;
+                >.from-input,
+                .to-input,
+                .offer-search-id {
+                    position: relative;
+                    float: none;
+                    width: 90%;
+                    background-color: $grey;
+                    border: none;
+                    outline: none;
+                    line-height: 150%;
+                    font-size: $pc-text2;
+                    padding: 0 5%;
+                    margin: 0.1vw 0;
+                    font-family: $pt-sans;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        font-size: $mb-text3;
+                    }
+                }
+                &.offer-search-to-inputs-container {
+                    float: right;
+                }
+            }
+            >.offer-search-from-units-container,
+            .offer-search-to-units-container {
+                position: relative;
+                float: left;
+                display: inline-block;
+                >.unit-text {
+                    position: relative;
+                    float: none;
+                    line-height: 150%;
+                    margin: 0.1vw 0.2vw;
+                    font-size: $pc-text2;
+                    font-family: $pt-sans;
+                    @media screen and (max-aspect-ratio: 3/4) {
+                        font-size: $mb-text3;
+                    }
+                }
+                &.offer-search-to-units-container {
+                    float: right;
+                }
+            }
+            >.offer-search-id-text {
+                position: relative;
+                float: left;
+                font-weight: bold;
+                margin: 0.1vw 0.2vw;
+            }
+            //> .offer-search-price-container {
+            //  position: absolute;
+            //  display: block;
+            //  left: 6.97%;
+            //  width: 90%;
+            //  height: 10%;
+            //  top: 61.65%;
+            //  > .offer-search-price-from-container {
+            //    position: absolute;
+            //    display: block;
+            //    width: 50%;
+            //    > .offer-search-price-from {
+            //      width: 40%;
+            //      background-color: $grey;
+            //      border: none;
+            //      font-size: $pc-text2;
+            //      font-family: $pt-sans;
+            //      margin-left: 2%;
+            //      @media screen and (max-aspect-ratio: 3/4) {
+            //        font-size: $mb-text3;
+            //      }
+            //    }
+            //  }
+            //  > .offer-search-price-to-container {
+            //    position: absolute;
+            //    display: block;
+            //    width: 50%;
+            //    left: 53%;
+            //    @media screen and (max-aspect-ratio: 3/4) {
+            //      left: 55.2%
+            //    }
+            //    > .offer-search-price-to {
+            //      width: 40%;
+            //      background-color: $grey;
+            //      border: none;
+            //      font-size: $pc-text2;
+            //      font-family: $pt-sans;
+            //      @media screen and (max-aspect-ratio: 3/4) {
+            //        font-size: $mb-text3;
+            //      }
+            //    }
+            //  }
+            //}
+            //> .offer-search-space-container {
+            //  position: absolute;
+            //  display: block;
+            //  left: 6.97%;
+            //  width: 90%;
+            //  height: 10%;
+            //  top: 69%;
+            //  > .offer-search-space-from-container {
+            //    position: absolute;
+            //    display: block;
+            //    width: 50%;
+            //    > .offer-search-space-from {
+            //      width: 40%;
+            //      background-color: $grey;
+            //      border: none;
+            //      margin-left: 2%;
+            //      font-size: $pc-text2;
+            //      font-family: $pt-sans;
+            //      @media screen and (max-aspect-ratio: 3/4) {
+            //        font-size: $mb-text3;
+            //      }
+            //    }
+            //  }
+            //  > .offer-search-space-to-container {
+            //    position: absolute;
+            //    display: block;
+            //    width: 50%;
+            //    left: 53%;
+            //    @media screen and (max-aspect-ratio: 3/4) {
+            //      left: 55.2%
+            //    }
+            //    > .offer-search-space-to {
+            //      width: 40%;
+            //      background-color: $grey;
+            //      border: none;
+            //      font-size: $pc-text2;
+            //      font-family: $pt-sans;
+            //      @media screen and (max-aspect-ratio: 3/4) {
+            //        font-size: $mb-text3;
+            //      }
+            //    }
+            //  }
+            //}
+            //> .offer-search-id-container {
+            //  position: absolute;
+            //  display: block;
+            //  left: 6.97%;
+            //  width: 90%;
+            //  height: 10%;
+            //  top: 74.15%;
+            //  > .offer-search-id {
+            //    width: 20%;
+            //    background-color: $grey;
+            //    border: none;
+            //    font-size: $pc-text2;
+            //    font-family: $pt-sans;
+            //    margin: 2.5%;
+            //    @media screen and (max-aspect-ratio: 3/4) {
+            //      font-size: $mb-text3;
+            //    }
+            //  }
+            //}
+        }
+        >.offer-search-start-searching {
+            position: absolute;
+            display: block;
+            cursor: pointer;
+            width: 25.06%;
+            height: 10.30%;
+            left: 6.97%;
+            top: 84.15%;
+            background-color: $red;
+            >.offer-search-start-searching-text {
+                position: absolute;
+                display: block;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                color: $white;
+                font-size: $pc-text2;
+                font-family: $pt-sans;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    font-size: $mb-text2;
+                }
+            }
+        }
+        >.offer-search-offer-type-sellable {
+            position: absolute;
+            display: block;
+            top: 90%;
+            left: 55%;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            font-family: $pt-sans;
+            color: $dark-grey;
+            font-size: $pc-text2;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text3;
+            }
+            &.selected {
+                padding: 0 1%;
+                border: 0.2vw solid;
+                font-family: $pt-sans;
+                font-weight: bold;
+                font-size: $pc-text2;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    font-size: $mb-text2;
+                    border: 0.4vw solid;
+                }
+            }
+        }
+        >.offer-search-offer-type-rentable {
+            position: absolute;
+            display: block;
+            top: 90%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            font-family: $pt-sans;
+            cursor: pointer;
+            color: $dark-grey;
+            font-size: $pc-text2;
+            @media screen and (max-aspect-ratio: 3/4) {
+                font-size: $mb-text3;
+            }
+            &.selected {
+                padding: 0 1%;
+                border: 0.2vw solid;
+                font-family: $pt-sans;
+                font-weight: bold;
+                font-size: $pc-text2;
+                @media screen and (max-aspect-ratio: 3/4) {
+                    font-size: $mb-text2;
+                    border: 0.4vw solid;
+                }
+            }
+        }
+    }
+}

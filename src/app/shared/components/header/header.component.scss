@@ -1,0 +1,14 @@
+@import '../../styles/constants';
+#top-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19vh;
+    width: 100%;
+    background-color: $grey-bg;
+    img {
+        display: block;
+        height: 100%;
+        margin: auto;
+    }
+}
